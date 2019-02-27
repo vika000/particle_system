@@ -1,0 +1,22 @@
+{
+  "name": "particle_system",
+  "version": "1.0.0",
+  "description": "first try",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vika000/particle_system.git"
+  },
+  "author": "vika0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vika000/particle_system/issues"
+  },
+  "homepage": "https://github.com/vika000/particle_system#readme",
+  "dependencies": {
+    "p5": "^0.7.3"
+  }
+}

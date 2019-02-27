@@ -1,44 +1,30 @@
-// main.js
 let hackerPic;
-let humans = [];
-let repeatedHacks = 1000;
+let hackers = [];
+let numberOfHackers = 1000;
 let whichHacker = 0;
 
-
 function setup(){
-	createCanvas(1000,1000);
-	hackerPic = loadImage('assets/hacker.jpeg')
-	
-	for(let i = 0; i < repeatedHacks; i++){
-		humans[i] = new Hacker();
-	}
+  createCanvas(800,800);
+  hackerPic = loadImage('assets/hacker.jpeg'); // Load the image
+  for (let i = 0; i < numberOfHackers; i++){
+    hackers[i] = new Hacker();
+  }
 }
+
 function draw() {
-	background(150);
-	for (let i = 0; i < repeatedHacks; i++){
-    if(humans[i].visible){
-      haumans[i].display();
-      humans[i].move();
+  background(0);
+  // Displays the image at its actual size at point (0,0)
+  for (let i = 0; i < numberOfHackers; i++){
+    if(hackers[i].visible){
+      hackers[i].display();
+      hackers[i].move();
     }
   }
   // Displays the image at point (0, height/2) at half size
 }
-	
-class Hacker{
-	constructor(){
-	this.x = random(width);
-	this.y = random(height);
-	this.smallness = random(40)+5;
-    this.xSpeed = random(-2,2);
-    this.ySpeed = random(-2,2);
-    this.visible = false;
 
+function keyPressed(){
+  hackers[whichHacker].visible = true;
+  whichHacker++;
 }
-  display(){
-    image(hackerPic, this.x, this.y, this.smallness, this.smallness);
-  }
 
-  move(){
-    this.x = this.x + this.xSpeed;
-    this.y = this.y + this.ySpeed;
-  }
