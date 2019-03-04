@@ -6,6 +6,7 @@ class Hacker {
     this.xSpeed = random(-2,2);
     this.ySpeed = random(-2,2);
     this.visible = false;
+    this.direction = true;
   }
 
   display(){
@@ -13,8 +14,27 @@ class Hacker {
   }
 
   move(){
-    this.x = this.x + this.xSpeed;
-    this.y = this.y + this.ySpeed;
-  }
+    if(this.direction == true){
+      this.x = this.x + this.xSpeed;
+      this.y = this.y + this.ySpeed;
+    }else{
+      this.x = this.x + -this.xSpeed;
+      this.y = this.y + -this.ySpeed;
 
+    }
+
+    if(this.x >= width){
+      this.direction = false;
+
+    }
+    if(this.x <= 0){
+      this.direction = true;
+    }
+    if(this.y >= height){
+      this.direction = false;
+    }
+    if(this.y <=0){
+      this.direction = true;
+    }
+  }
 }

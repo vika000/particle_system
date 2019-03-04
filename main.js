@@ -6,6 +6,7 @@ let whichHacker = 0;
 function setup(){
   createCanvas(800,800);
   hackerPic = loadImage('assets/hacker.jpeg'); // Load the image
+  imageMode(CENTER);
   for (let i = 0; i < numberOfHackers; i++){
     hackers[i] = new Hacker();
   }
@@ -27,4 +28,7 @@ function keyPressed(){
   hackers[whichHacker].visible = true;
   whichHacker++;
 }
+
+
+
 
